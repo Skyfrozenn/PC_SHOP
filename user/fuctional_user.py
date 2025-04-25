@@ -13,6 +13,7 @@ from aiogram.types import ReplyKeyboardRemove
 user_rt=Router()
 
 
+
 @user_rt.message(Command("user"))
 async def user_reg(message:Message,state:FSMContext):
     us_id=message.from_user.id
@@ -23,6 +24,7 @@ async def user_reg(message:Message,state:FSMContext):
     else:
         await message.answer("Чтобы пользоваться ботом нужно пройти регистрацию\nВведите Имя!")
         await state.set_state(Us.wait_name)
+        
 
 @user_rt.message(Us.wait_name)
 async def save_name(message:Message,state:FSMContext):

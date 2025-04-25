@@ -54,6 +54,10 @@ class Userproduct(Base):
     
 Base.metadata.create_all(engine)
 
+
+
+
+
 def add_tovars(photo_tovars,name_tovars,price,count):  #добавление товара (АДМИНУ) и проверка есть ли товар 
     with Session.begin() as session:
             new_tovars=Product(photo_tovars=photo_tovars,name_tovars=name_tovars,price=price,count=count)

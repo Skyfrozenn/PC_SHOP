@@ -16,6 +16,7 @@ admin_rt=Router()
 async def starting(message:Message,state:FSMContext):
     await message.answer("Выбери действие:",reply_markup=kb())
     await state.set_state(Rep.wait_keyboard) #Ожидание действия 
+    
 
  
 @admin_rt.message(F.text=="Добавить Товар")
